@@ -95,36 +95,28 @@ console.log(analyzeColor(randomColor));
  * return value.
  */
 function calculateTotal(luckyNumber, billTotal) {
-
-    switch(luckyNumber) {
-        case 0:
-            return billTotal;
-        case 1:
-            return billTotal - billTotal *.1;
-        case 2:
-            return billTotal - billTotal *.25;
-        case 3:
-            return billTotal - billTotal *.35;
-        case 4:
-            return billTotal - billTotal *.50
-        case 5:
-            return 0;
-        default:
-            return billTotal;
+    if (luckyNumber === 0) {
+        return billTotal;
+        if (luckyNumber === 1) {
+            return billTotal - billTotal * .1;
+            if (luckyNumber === 2) {
+                return billTotal - billTotal * .25;
+            }
+        }
     }
-}
 
-/**
- * TODO:
- * Uncomment the line below to generate a random number between 0 and 6.
- * Prompt the user for their total bill, then use your `calculateTotal` function
- * and alerts to display to the user what their lucky number was, what their
- * price before the discount was, and what their price after the discount is.
- */
+    /**
+     * TODO:
+     * Uncomment the line below to generate a random number between 0 and 6.
+     * Prompt the user for their total bill, then use your `calculateTotal` function
+     * and alerts to display to the user what their lucky number was, what their
+     * price before the discount was, and what their price after the discount is.
+     */
 // Generate a random number between 0 and 6
 
-// var luckyNumber = Math.floor(Math.random() * 6);
-// var totalBill = prompt("What was your total bill?");
+    var luckyNumber = Math.floor(Math.random() * 6);
+    var totalBill = prompt("What was your total bill?");
+
 //
 // console.log("The current type of 'totalBill' is: " + (typeof totalBill));
 // totalBill = parseFloat(totalBill);
@@ -151,34 +143,27 @@ function calculateTotal(luckyNumber, billTotal) {
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
-var enterOrNot = confirm("Enter a number");
-
-if (enterOrNot) {
-    var userNumber = prompt("Please enter a number:");
-    if (typeof parseFloat(userNumber) === "number") {
-        userNumber = parseFloat(userNumber);
-        if (isEven(userNumber)) {
-            alert("Your number is even");
-        } else {
-            alert("Your number is odd");
-        }
-    }
-    alert("Your number +100 is: " + (userNumber + 100));
-
-    if (isNegative(userNumber)) {
-        alert("Your number is negative");
-    } else {
-        alert("Your number is positive")
-    }
-
-    } else {
-        alert("I'm sorry, that is not a number, please refresh");
-    }
-
-
-function isEven(number) {
-    return number % 2 === 0;
-}
-function isNegative(number) {
-    return (number < 0);
+// var enterNumber = confirm("would you like to enter a number?");
+//
+// if (enterNumber) {
+//     var userNumber = prompt("Please enter a number.");
+//     if (typeof parseFloat(userNumber) === "number") {
+//         userNumber = parseFloat(userNumber);
+//         if (isEven(userNumber)) {
+//             alert("This number is even");
+//         } else {
+//             alert("This number is odd");
+//         }
+//         alert("Your number + 100 is: " + (userNumber + 100));
+//
+//         if (userNumber < 0) {
+//             alert("Your number is negative");
+//         } else {
+//             alert("Your number is positive");
+//         }
+//     }
+// }
+//
+// function isEven(number) {
+//     return number % 2 === 0;
 }
