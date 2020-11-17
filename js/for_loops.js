@@ -1,20 +1,19 @@
 // Exercise 2:
 
-// function showMultiplicationTable(number) {
-//     for (var i = 1; i <= 10; i++) {
-//         console.log(number * i);
-//     }
-// }
 
 
 // Separate solution:
-
-// function showMultiplicationTable(number) {
+// function showMultiply(number) {
 //     for (var i = 1; i <= 10; i++) {
 //         console.log(number + " x " + i + " = " + (number * i));
 //     }
 // }
 
+function xy(number) {
+    for (var i = 1; i <= 10; i++) {
+        console.log(number + " x " + i + " = " + (number * i));
+    }
+}
 
 
 // ************************************************************************** //
@@ -33,6 +32,7 @@
 // }
 
 
+
 // Separate solution:
 
 // for (var i = 0; i < 10; i++) {
@@ -44,17 +44,17 @@
 //     }
 // }
 
-function oddOrEven (number) {
-
-    for (var i = 1; i < 10; i++) {
-        var randomNumber = Math.floor(Math.random() * (200 - 20) + 20);
-        if (randomNumber % 2 !== 0) {
-            console.log(randomNumber + " Odd number.");
-        } else {
-            console.log(randomNumber + " Even number.");
-        }
-    }
-}
+// function oddOrEven (number) {
+//
+//     for (var i = 1; i < 10; i++) {
+//         var randomNumber = Math.floor(Math.random() * (200 - 20) + 20);
+//         if (randomNumber % 2 !== 0) {
+//             console.log(randomNumber + " Odd number.");
+//         } else {
+//             console.log(randomNumber + " Even number.");
+//         }
+//     }
+// }
 
 // ************************************************************************** //
 
@@ -64,7 +64,11 @@ function oddOrEven (number) {
 //         console.log(i.toString().repeat(i));
 //     }
 // }
-
+function numberTree() {
+    for (var i = 1; i < 10; i++) {
+        console.log(i.toString().repeat(i));
+    }
+}
 
 // Separate solution:
 
@@ -77,16 +81,16 @@ function oddOrEven (number) {
 
 // Separate solution:
 
-function numberTree() {
-    for (var x = 1; x < 10; x++) {
-        var x1 = "";
-
-        for(var y = 1; y <= x; y++) {
-            x1 = x1 + x;
-        }
-            console.log(x1);
-    }
-}
+// function numberTree() {
+//     for (var x = 1; x < 10; x++) {
+//         var x1 = "";
+//
+//         for(var y = 1; y <= x; y++) {
+//             x1 = x1 + x;
+//         }
+//             console.log(x1);
+//     }
+// }
 
 // ************************************************************************** //
 
@@ -99,6 +103,13 @@ function numberTree() {
 //     }
 // }
 
+function countDown() {
+    for (var i = 100; i > 4; i--) {
+        if (i % 5 === 0) {
+            console.log(i);
+        }
+    }
+}
 
 // Separate solution:
 
@@ -106,8 +117,21 @@ function numberTree() {
 //     console.log(i);
 // }
 
-function countDown() {
-    for (var i = 100; i > 4; i -= 5) {
-        console.log(i);
+// function countDown() {
+//     for (var i = 100; i > 4; i -= 5) {
+//         console.log(i);
+//     }
+// }
+
+// *************************************************************************************** //
+
+function countTimer(num) {
+    var start = Date.now();
+    console.log("Counting from 1 to " + num);
+    for (var i = 1; i < num; i++) {
+        //just counting
     }
+    var end = Date.now();
+    console.log("Done.");
+    console.log("It took " + (end - start) + " milliseconds");
 }

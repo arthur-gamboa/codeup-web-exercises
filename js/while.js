@@ -7,12 +7,12 @@
 //     x = x * 2;
 // }
 
-function doublingNumber() {
-    var doubleNumber = 2;
+function doubleNumber() {
+    var x = 2;
 
-    while (doubleNumber <= 65536) {
-        console.log(doubleNumber);
-        doubleNumber = doubleNumber * 2;
+    while (x <= 65536) {
+        console.log(x);
+        x = x * 2;
     }
 }
 
@@ -51,17 +51,3 @@ function doublingNumber() {
 
 // ************************************************************************** //
 
-var allCones = Math.floor(Math.random() * 50) + 50;
-console.log(allCones + " cones to sell..");
-
-do {
-    var conesPurchased = Math.floor(Math.random() * 5) + 1;
-    if (conesPurchased > allCones) {
-        console.log("I don't have that many.");
-    } else {
-        allCones = allCones - conesPurchased;
-        console.log(conesPurchased + "? Sure!");
-    }
-}
-while (allCones > 0)
-    console.log("All sold out");
