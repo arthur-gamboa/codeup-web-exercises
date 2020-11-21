@@ -1,5 +1,17 @@
+h1 {
+    text-align: center;
+}
 
-.fancy-header {
+h1.fancy-header {
     color: turquoise;
     text-decoration: underline;
+}
+
+h3.fancy-header {
+    color: lightsalmon;
+    text-decoration: underline;
+}
+
+.extra-large {
+    font-size: 40px;
 }

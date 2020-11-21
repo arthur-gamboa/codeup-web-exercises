@@ -1,0 +1,19 @@
+body {
+    background-color: aquamarine;
+}
+
+
+#outer-box {
+    height: 266px;
+    background-color: green;
+}
+
+
+/* padding */
+#inner-box {
+    /* where the text is */
+    height: 100%;
+    padding: 25px;
+    margin: 15px;
+    background-color: grey;
+}
