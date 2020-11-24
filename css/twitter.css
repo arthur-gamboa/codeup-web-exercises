@@ -25,9 +25,7 @@ header {
 a {
     color: var(--link-color);
 }
-#nav {
-    padding: 1.5em;
-}
+
 .media {
     width: 100%;
     background-color: var(--light-bg);
