@@ -1,0 +1,25 @@
+body {
+    background-color: #3B94D9;
+}
+
+@media screen and (min-width: 1000px) {
+    body {
+        background-color: #fb8fa3;
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width: 710px) {
+    h1 {
+        text-align: center;
+        text-decoration: underline;
+        background-color: #786921;
+    }
+}
+
+@media screen and (min-width: 750px) and (max-width: 760px) {
+    h1, body {
+        text-align: right;
+        text-decoration-color: darkred;
+        background-color: darkorange;
+    }
+}

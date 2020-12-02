@@ -1,0 +1,46 @@
+h1 {
+    text-align: center;
+    background-color: white;
+    color: black;
+    opacity: .55;
+}
+
+.nav-item-signup a {
+    margin-left: auto;
+    align-content: flex-end;
+}
+
+h4 {
+    margin-left: .5em;
+}
+
+.jumbotron {
+    background-image: url("../img/pizza.png");
+}
+
+.container {
+    border-radius: 5px;
+    padding: 0;
+}
+
+.card-body {
+    background-color: dodgerblue;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.card2 {
+    /*background-color: red;*/
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.card3 {
+    padding-top: 15px;
+    border-radius: 5px;
+}
+
+.badge {
+    padding: 10px;
+    margin: 10px;
+}
