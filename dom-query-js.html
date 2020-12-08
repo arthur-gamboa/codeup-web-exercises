@@ -26,15 +26,17 @@
 </p><br>
 
 
-<button id="btn1">Change Header.</button><br><br>
+<button id="btn1" class="btn">Change Header.</button><br><br>
 
-<button id="btn2">Hello Again, but blue.</button><br><br>
+<button id="btn2" class="btn">Hello Again, but blue.</button><br><br>
 
-<button id="btn3">Odd items to grey font.</button><br><br>
+<button id="btn3" class="btn">Odd items to grey font.</button><br><br>
 
-<button id="btn4">Change text.</button><br><br>
+<!--<button id="btn4" class="btn">Change text.</button><br><br>-->
 
-<button id="btn5">Lorem disappear. </button><br><br>
+<button id="btn5" class="btn">Lorem disappear. </button><br><br>
+
+<button id="btn6" class="btn">Omni Press.</button>
 
 <script>
     (function() {
@@ -61,16 +63,19 @@
         // TODO: Set text color on every other list item to grey
         document.getElementById("btn3").addEventListener("click", function() {
             for (var i = 0; i < listItems.length; i++) {
-                if ([i] % 2 === 0) {
+                if ([i] % 2 !== 0) {
                     listItems[i].style.color = "grey";
                 }
+            }
+            if (listItems[0] === 0) {
+                [i].style.color = "blue";
             }
         });
 
         // TODO: Set text color of li with dbid = 1 to blue
-        document.getElementById("btn4").addEventListener("click", function() {
-            listItems[1].style.color = "blue";
-        });
+        // document.getElementById("btn4").addEventListener("click", function() {
+        //     listItems[1].style.color = "blue";
+        // });
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.getElementsByClassName("sub-paragraph");
@@ -79,6 +84,17 @@
         document.getElementById("btn5").addEventListener("click", function() {
             subParagraphs[0].innerText = "Mission Accomplished!";
         });
+
+        document.getElementById("btn6").addEventListener("click", function() {
+            subParagraphs[0].innerText = "Mission Accomplished!";
+            listItems[1].style.color = "blue";
+            for (var i = 0; i < listItems.length; i++) {
+                if ([i] % 2 === 0) {
+                    listItems[i].style.color = "grey";
+                }
+            }
+            mainHeader.innerHTML = "JavaScript is Cool";
+        })
 
     })();
 </script>
