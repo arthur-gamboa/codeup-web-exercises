@@ -86,7 +86,7 @@ document.getElementById("search-button").addEventListener("click", function() {
         // map.setCenter(result); // map.setCenter([98.48, 29.426])
         // map.setCenter(result); // i.e. map.setCenter([98.48, 29.426])
         map.flyTo( {
-            center: result;
+            center: result,
             zoom: 14,
             speed: 4,
             curve: 1,
