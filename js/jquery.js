@@ -121,6 +121,7 @@ function thirtyLives() {
 }
 
 
+
 //After the correct Konami Code sequence is inputted, have the script alert the user: "You have added 30 lives! Other ideas:
 
 //Change the background screen.
