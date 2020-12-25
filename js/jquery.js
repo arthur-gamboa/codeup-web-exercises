@@ -87,44 +87,69 @@
 //Find the matching sequence using the code above for each key in the Konami Code.
 // Don't worry about capital a or b just check for lowercase.
 
-const keyInput = {
-    38: "up",
-    40: "down",
-    37: "left",
-    39: "right",
-    65: "a",
-    66: "b",
-    13: "return"
-};
+// const keyInput = {
+//     38: "up",
+//     40: "down",
+//     37: "left",
+//     39: "right",
+//     65: "a",
+//     66: "b",
+//     13: "return"
+// };
+//
+// var codeSequence = ["up", "up", "down", "down", "left", "right", "left", "right", "b", "a", "return"];
+// var codePosition = 0;
+//
+// $(document).keydown(function(event) {
+//     var keys = keyInput[event.keyCode];
+//     console.log(event.keyCode);
+//     var keyStroke = codeSequence[codePosition];
+//
+//     if (keys === keyStroke) {
+//         codePosition++;
+//
+//         if(codePosition === codeSequence.length) {
+//             thirtyLives();
+//             codePosition = 0;
+//         }
+//     } else {
+//         codePosition = 0;
+//     }
+// });
+// function thirtyLives() {
+//     alert("cheater.");
+//     // $(this).css("background-image", "url('/img/Dark_Souls.jpg')");
+// }
 
-var codeSequence = ["up", "up", "down", "down", "left", "right", "left", "right", "b", "a", "return"];
-var codePosition = 0;
-
-$(document).keydown(function(event) {
-    var keys = keyInput[event.keyCode];
-    var keyStroke = codeSequence[codePosition];
-
-    if (keys === keyStroke) {
-        codePosition++;
-
-        if(codePosition === codeSequence.length) {
-            thirtyLives();
-            codePosition = 0;
-        }
-    } else {
-        codePosition = 0;
+var string="";
+var konami="ArrowUpArrowDownArrowUpArrowDownArrowLeftArrowRightArrowLeftArrowRightab"
+$(document).keyup(function(event){
+    if (event.key==="ArrowUp"){
+        string+=event.key;
+        console.log(string)
+    }
+    if (event.key==="ArrowDown"){
+        string+=event.key;
+        console.log(string)
+    }
+    if (event.key==="ArrowLeft"){
+        string+=event.key;
+        console.log(string)
+    }
+    if (event.key==="ArrowRight"){
+        string+=event.key;
+        console.log(string)
+    }
+    if (event.key==="a"){
+        string+=event.key;
+        console.log(string)
+    }
+    if (event.key==="b"){
+        string+=event.key;
+        console.log(string)
+    }
+    if (string.includes(konami)){
+        alert("cheater.");
+        string=""
     }
 });
-function thirtyLives() {
-    alert("cheater.");
-    $(this).css("background-image", "url('/img/Dark_Souls.jpg')");
-}
-
-
-
-//After the correct Konami Code sequence is inputted, have the script alert the user: "You have added 30 lives! Other ideas:
-
-//Change the background screen.
-// Play a sound.
-// Be creative!
-// Happy Playing.
