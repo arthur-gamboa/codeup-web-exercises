@@ -46,9 +46,34 @@
         <dd>The Goodyear Blimp is nothing short of iconic, but we wouldn't classify it as a bird. Still, that didn't stop Redondo Beach—a coastal city situated near the Goodyear Blimp's home airport in Carson, California—from passing a resolution in 1983 to make the blimp its official bird.</dd>
     </dl>
 
+    <h3>Park One</h3>
+    <ul>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+        <li>Ad aliquam amet beatae dolorum earum est explicabo modi.</li>
+        <li>Accusamus, aliquid aut dolor dolore ea error explicabo laborum!</li>
+        <li>Cur deleniti facere fugit, harum illo nam sequi vel.</li>
+    </ul>
+    <h3>Park Two</h3>
+    <ul>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+        <li>Ad aliquam amet beatae dolorum earum est explicabo modi.</li>
+        <li>Accusamus, aliquid aut dolor dolore ea error explicabo laborum!</li>
+        <li>Cur deleniti facere fugit, harum illo nam sequi vel.</li>
+    </ul>
+    <h3>Park Three</h3>
+    <ul>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+        <li>Ad aliquam amet beatae dolorum earum est explicabo modi.</li>
+        <li>Accusamus, aliquid aut dolor dolore ea error explicabo laborum!</li>
+        <li>Cur deleniti facere fugit, harum illo nam sequi vel.</li>
+    </ul>
+
+<button id="traversing">GO</button>
 
 <script src="js/jquery-2.2.4.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
 
 <script>
     $(document).ready(function() {
@@ -59,6 +84,28 @@
 
         $("dt").click(function() {
             $(this).toggleClass("highlighted");
+        });
+
+
+
+        // $("ul li:last-child").css("background-color", "yellow");
+        // or..
+
+        $("#traversing").click(function() {
+            // $("ul li:nth-last-child(1)").css("background-color", "yellow");
+            // or..
+
+            $("ul").each(function() {
+                $(this).children().last().css("background-color", "yellow");
+            });
+        });
+
+        $("h3").click(function() {
+            $(this).next().css("font-weight", "bold");
+        });
+
+        $("li").click(function() {
+            $(this).parent().children().first().css("color", "blue");
         });
     });
 </script>
