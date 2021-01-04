@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weird Facts</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <style>
+        .invisible { visibility: hidden }
+        .highlighted { background-color: lightskyblue }
+    </style>
+
+</head>
+<body>
+    <h3>10 Weird Facts</h3>
+<a id="toggle">Toggle Details</a>
+    <dl>
+        <dt>Squirrels are behind most power outages in the U.S.</dt>
+        <dd>The American Public Power Association (APPA) says that squirrels are the most frequent cause of power outages in the U.S. The APPA even developed a data tracker called "The Squirrel Index" that analyzes the patterns and timing of squirrels' impact on electrical power systems.</dd>
+
+        <dt>Spider webs were used as bandages in ancient times.</dt>
+        <dd>In ancient Greece and Rome, doctors used spider webs to make bandages for their patients. Spider webs supposedly have natural antiseptic and anti-fungal properties, which can help keep wounds clean and prevent infection.</dd>
+
+        <dt>A woman who lost her wedding ring found it 16 years later on a carrot in her garden.</dt>
+        <dd>A woman in Sweden lost her wedding ring while cooking for Christmas in 1995. She looked everywhere for it, and even had her kitchen floor pulled up hoping she could find it. But she wouldn't see it again until 2012.</dd>
+
+        <dt>One-quarter of all your bones are located in your feet.</dt>
+        <dd>There are 26 bones in each foot. That's 52 bones in both feet, out of 206 total bones in your whole body, which is more than 25 percent.</dd>
+
+        <dt>Blood donors in Sweden receive a text when their blood is used.</dt>
+        <dd>To encourage more young people to donate blood, Sahlgrenska University Hospital in Gothenburg, Sweden, sends a text to donors when their blood has been dispensed to someone in need. </dd>
+
+        <dt>The inventor of the Pringles can is now buried in one.</dt>
+        <dd>In 1966, Fredric Baur developed the ingenious idea for Procter & Gamble to uniformly stack chips inside a can instead of tossing them in a bag. Baur was so proud of his invention that he wanted to take it to the grave—literally.</dd>
+
+        <dt>Sunglasses were originally designed for Chinese judges to hide their facial expressions in court.</dt>
+        <dd>Today, sunglasses serve as protective eyewear, effectively preventing bright sunlight from causing discomfort or damage to our eyes. Of course, they're also a fashion accessory.</dd>
+
+        <dt>Cotton candy was invented by a dentist.</dt>
+        <dd>Dentist William Morrison and confectioner John C. Wharton invented machine-spun cotton candy in 1897. It was first introduced at the 1904 World's Fair as "Fairy Floss."</dd>
+
+        <dt>Shakespeare's epitaph contains a curse for grave robbers.</dt>
+        <dd>When William Shakespeare died at 52 years old on April 23, 1616, he was buried in a tomb that featured an epitaph meant to ward off grave robbers: "GOOD FREND FOR IESVS SAKE FORBEARE / TO DIGG THE DVST ENCLOASED HEARE / BLESTe BE Ye MAN Yt SPARES THES STONES / AND CVRST BE HE Yt MOVES MY BONES."</dd>
+
+        <dt>The Goodyear Blimp is the official bird of Redondo Beach, California.</dt>
+        <dd>The Goodyear Blimp is nothing short of iconic, but we wouldn't classify it as a bird. Still, that didn't stop Redondo Beach—a coastal city situated near the Goodyear Blimp's home airport in Carson, California—from passing a resolution in 1983 to make the blimp its official bird.</dd>
+    </dl>
+
+
+<script src="js/jquery-2.2.4.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $("dd").addClass("invisible");
+        $("#toggle").click(function() {
+            $("dd").toggleClass("invisible");
+        });
+
+        $("dt").click(function() {
+            $(this).toggleClass("highlighted");
+        });
+    });
+</script>
+</body>
+</html>
