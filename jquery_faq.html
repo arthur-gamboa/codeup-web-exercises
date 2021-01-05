@@ -12,6 +12,11 @@
 
 </head>
 <body>
+<div>
+    <h1>Would you like to sign up for our newsletter?</h1>
+    <span id="close-button">Click this line to hide top elements.</span>
+</div><br>
+<h2 id="register">Please register for this site.</h2>
     <h3>10 Weird Facts</h3>
 <a id="toggle">Toggle Details</a>
     <dl>
@@ -46,27 +51,27 @@
         <dd>The Goodyear Blimp is nothing short of iconic, but we wouldn't classify it as a bird. Still, that didn't stop Redondo Beach—a coastal city situated near the Goodyear Blimp's home airport in Carson, California—from passing a resolution in 1983 to make the blimp its official bird.</dd>
     </dl>
 
-    <h3>Park One</h3>
-    <ul>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-        <li>Ad aliquam amet beatae dolorum earum est explicabo modi.</li>
-        <li>Accusamus, aliquid aut dolor dolore ea error explicabo laborum!</li>
-        <li>Cur deleniti facere fugit, harum illo nam sequi vel.</li>
-    </ul>
-    <h3>Park Two</h3>
-    <ul>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-        <li>Ad aliquam amet beatae dolorum earum est explicabo modi.</li>
-        <li>Accusamus, aliquid aut dolor dolore ea error explicabo laborum!</li>
-        <li>Cur deleniti facere fugit, harum illo nam sequi vel.</li>
-    </ul>
-    <h3>Park Three</h3>
-    <ul>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-        <li>Ad aliquam amet beatae dolorum earum est explicabo modi.</li>
-        <li>Accusamus, aliquid aut dolor dolore ea error explicabo laborum!</li>
-        <li>Cur deleniti facere fugit, harum illo nam sequi vel.</li>
-    </ul>
+    <h3 class="park-name">Park One</h3>
+        <ul class="facts">
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+            <li>Ad aliquam amet beatae dolorum earum est explicabo modi.</li>
+            <li>Accusamus, aliquid aut dolor dolore ea error explicabo laborum!</li>
+            <li>Cur deleniti facere fugit, harum illo nam sequi vel.</li>
+        </ul>
+    <h3 class="park-name">Park Two</h3>
+        <ul class="facts">
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+            <li>Ad aliquam amet beatae dolorum earum est explicabo modi.</li>
+            <li>Accusamus, aliquid aut dolor dolore ea error explicabo laborum!</li>
+            <li>Cur deleniti facere fugit, harum illo nam sequi vel.</li>
+        </ul>
+    <h3 class="park-name">Park Three</h3>
+        <ul class="facts">
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+            <li>Ad aliquam amet beatae dolorum earum est explicabo modi.</li>
+            <li>Accusamus, aliquid aut dolor dolore ea error explicabo laborum!</li>
+            <li>Cur deleniti facere fugit, harum illo nam sequi vel.</li>
+        </ul>
 
 <button id="traversing">GO</button>
 
@@ -85,7 +90,7 @@
         $("dt").click(function() {
             $(this).toggleClass("highlighted");
         });
-
+        // --------------------------------------------------------------
 
 
         // $("ul li:last-child").css("background-color", "yellow");
@@ -107,6 +112,19 @@
         $("li").click(function() {
             $(this).parent().children().first().css("color", "blue");
         });
+        // ---------------------------------------------------------------
+
+        $("#close-button").click(function() {
+            $(this).parent().hide(1500);
+        });
+
+        $(".facts").hide();
+        $(".park-name").click(function() {
+            $(this).next().slideToggle(1500);
+        });
+
+        $("#register").hide().delay(8000).fadeIn(1000);
+
     });
 </script>
 </body>
