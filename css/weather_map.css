@@ -1,0 +1,10 @@
+div {
+    text-align: center;
+    /*height: 100vh;*/
+}
+#map {
+    width: 100vw;
+    height: 70vh;
+    /*position: absolute;*/
+    bottom: 0;
+}
