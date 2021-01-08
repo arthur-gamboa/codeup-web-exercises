@@ -6,38 +6,49 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYXJ0aHVyLWdhbWJvYSIsImEiOiJja2lqMHp1NTcwcjdnM
     zoom: 9 // starting zoom
 });
 
-$.get("http://api.openweathermap.org/data/2.5/forecast", {
-     APPID: mapboxKey,
-     q:     "San Antonio, US",
-     units: "imperial"
-    }).done(function(data) {
+   let startLocation = "San Antonio";
+   $("#current-location").text(startLocation);
 
-        for (var i = 0; i < 5; i++) {
-            console.log("Current Weather", data);
-            const date = data.list[i].dt_txt.split(" ");
+    getWeather(startLocation);
+    function getWeather(place) {
+        $.get("http://api.openweathermap.org/data/2.5/forecast", {
+            APPID: mapboxKey,
+            q: place,
+            units: "imperial"
+        }).done(function (data) {
+            $("#divToAppend").empty();
 
-            let HTML = "";
+            for (var i = 0; i < data.list.length; i++) {
+                if (i % 8 === 0) {
 
-            HTML =
-                '<div class="card" style="width: 12rem;"> <div class="card-body">' +
-                '<h6 class="card-title" id="current-date">' + date[0] + '</h6>' +
+                    // console.log("Current Weather", data);
+                    const date = data.list[i].dt_txt.split(" ");
 
-                '<h5 class="card-text" id="location">' + '<h5>' + data.city.name + ", " +
-                data.city.country + '</h5>' +
+                    let HTML = "";
 
-                '<p id="low-high">' + "Low: " + "<strong>" + data.list[i].main.temp_min +
-                ' ºF</strong>' + "<br>" + "High: " + "<strong>" + data.list[i].main.temp_max +
-                ' ºF</strong>' + "</p>" +
+                    HTML =
+                        '<div class="card" style="width: 12rem;"> <div class="card-body">' +
+                        '<h6 class="card-title" id="current-date">' + date[0] + '</h6>' +
 
-                '<p id="wind">' + "Wind: " + "<strong>" + data.list[i].wind.speed +
-                ' mph</strong></p>' +
+                        '<h5 class="card-text" id="location">' + '<h5>' + data.city.name + ", " +
+                        data.city.country + '</h5>' +
 
-                '<p id="pressure">' + "Pressure: " + "<strong>" + data.list[i].main.pressure +
-                '</strong></p>';
+                        '<p id="low-high">' + "Low: " + "<strong>" + data.list[i].main.temp_min +
+                        ' ºF</strong>' + "<br>" + "High: " + "<strong>" + data.list[i].main.temp_max +
+                        ' ºF</strong>' + "</p>" +
 
-            $("#divToAppend").append(HTML);
-        }
-});
+                        '<p id="wind">' + "Wind: " + "<strong>" + data.list[i].wind.speed +
+                        ' mph</strong></p>' +
+
+                        '<p id="pressure">' + "Pressure: " + "<strong>" + data.list[i].main.pressure +
+                        '</strong></p>';
+
+                    $("#divToAppend").append(HTML);
+                }
+            }
+
+        });
+    }
 
 var marker = new mapboxgl.Marker({
     draggable: true
@@ -46,3 +57,38 @@ var marker = new mapboxgl.Marker({
     .addTo(map)
     .setDraggable(true)
     .on('dragend', onDragEnd);
+
+let coordinates = {lat: 0, lng: 0}
+let place = "";
+
+function onDragEnd() {
+    coordinates.lng = marker.getLngLat().lng
+    coordinates.lat = marker.getLngLat().lat
+
+    reverseGeocode(coordinates, mapboxToken).then(function(data) {
+            place = data.split(",")[0];
+            $("#current-location").text(place);
+            getWeather(place);
+    });
+}
+
+function reverseGeocode(coordinates, token) {
+    var baseUrl = 'https://api.mapbox.com';
+    var endPoint = '/geocoding/v5/mapbox.places/';
+    return fetch(baseUrl + endPoint + coordinates.lng + "," + coordinates.lat + '.json' + "?" + 'access_token=' + token)
+        .then(function(res) {
+            return res.json();
+        })
+        // to get all the data from the request, comment out the following three lines...
+        .then(function(data) {
+            return data.features[2].place_name;
+        });
+}
+
+// let geocoder = new MapboxGeocoder ({
+//     accessToken: mapboxgl.accessToken,
+//     mapboxgl: mapboxgl,
+//     minLength: 1,
+//     marker: false
+// });
+// map.addControl(geocoder);
