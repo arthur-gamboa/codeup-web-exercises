@@ -8,8 +8,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYXJ0aHVyLWdhbWJvYSIsImEiOiJja2lqMHp1NTcwcjdnM
 
    let startLocation = "San Antonio";
    $("#current-location").text(startLocation);
-
     getWeather(startLocation);
+
     function getWeather(place) {
         $.get("http://api.openweathermap.org/data/2.5/forecast", {
             APPID: mapboxKey,
@@ -34,8 +34,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYXJ0aHVyLWdhbWJvYSIsImEiOiJja2lqMHp1NTcwcjdnM
                         data.city.country + '</h5>' +
 
                         '<p id="low-high">' + "Low: " + "<strong>" + data.list[i].main.temp_min +
-                        ' ºF</strong>' + "<br>" + "High: " + "<strong>" + data.list[i].main.temp_max +
-                        ' ºF</strong>' + "</p>" +
+                        ' º</strong>' + "<br>" + "High: " + "<strong>" + data.list[i].main.temp_max +
+                        ' º</strong>' + "</p>" +
 
                         '<p id="wind">' + "Wind: " + "<strong>" + data.list[i].wind.speed +
                         ' mph</strong></p>' +
@@ -79,16 +79,15 @@ function reverseGeocode(coordinates, token) {
         .then(function(res) {
             return res.json();
         })
-        // to get all the data from the request, comment out the following three lines...
         .then(function(data) {
             return data.features[2].place_name;
         });
 }
 
-// let geocoder = new MapboxGeocoder ({
-//     accessToken: mapboxgl.accessToken,
-//     mapboxgl: mapboxgl,
-//     minLength: 1,
-//     marker: false
-// });
-// map.addControl(geocoder);
+let geocoder = new MapboxGeocoder ({
+    accessToken: mapboxgl.accessToken,
+    mapboxgl: mapboxgl,
+    minLength: 1,
+    marker: false
+});
+map.addControl(geocoder);

@@ -1,11 +1,12 @@
 div {
+    color: dimgrey;
     text-align: center;
     /*height: 100vh;*/
     margin-top: 1em;
 }
 #map {
     width: 100vw;
-    height: 70vh;
+    height: 60vh;
     bottom: 0;
 }
 .navbar-toggle {
