@@ -1,10 +1,18 @@
 div {
     text-align: center;
     /*height: 100vh;*/
+    margin-top: 1em;
 }
 #map {
     width: 100vw;
     height: 70vh;
-    /*position: absolute;*/
     bottom: 0;
+}
+.navbar-toggle {
+    padding: 0 0;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+.flex-container {
+    display: flex;
 }
