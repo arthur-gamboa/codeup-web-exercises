@@ -53,13 +53,13 @@ $(document).ready(function() {
     let idsMap = mbpModels.map(function(mbp) {
         return mbp.id;
     });
-        console.log(idsMap);
+        // console.log(idsMap);
         /***** 3 lines of code *****/
 
     //  3. Use ES6
     var idsES6 = mbpModels.map(mbp => mbp.id);
     /***** 1 line of code *****/
-    console.log(idsES6);
+    // console.log(idsES6);
     /********************************* 1 *********************************/
 
     //  1. Using forEach()
@@ -106,7 +106,7 @@ $(document).ready(function() {
         return newArr.join('');
     }
     /********************* END function to get year from string ***************************/
-
+    
 
     /********************************* 1 *********************************/
     //  1. Use forEach()
@@ -126,13 +126,13 @@ $(document).ready(function() {
     let filter2011 = mbpModels.filter(function(mbp) {
         return getYear(mbp.year) >= 2011;
         });
-    console.log("filter2011: ");
-    console.log(filter2011);
+    // console.log("filter2011: ");
+    // console.log(filter2011);
     /********************************* 3 *********************************/
     //  3. Use ES6
     let es62011 = mbpModels.filter(mbp => getYear(mbp.year) >= 2011);
-    console.log("es62011: ");
-    console.log(es62011);
+    // console.log("es62011: ");
+    // console.log(es62011);
 
     // *****************   ******     ******************//
     // **************  TODO: REDUCE() ******************//
@@ -149,18 +149,18 @@ $(document).ready(function() {
     mbpModels.forEach(function(mbp) {
         totalValueFE += mbp.price;
     });
-    console.log("Total forEach: $" + totalValueFE);
+    // console.log("Total forEach: $" + totalValueFE);
     $("#reduceForEach").html(commaThousands(totalValueFE));
     /********************************* 2 *********************************/
     //  2. Use reduce()
     let totalValueReduce = mbpModels.reduce(function(total, mbp) {
         return total += mbp.price // i.e. 0 + 31.99 for first, etc..
         }, 0);
-    console.log("Total Value Reduced: $" + totalValueReduce);
+    // console.log("Total Value Reduced: $" + totalValueReduce);
     /********************************* 3 *********************************/
     //  3. Use ES6
     let totalValueES6 = mbpModels.reduce((total, mbp) => total + mbp.price, 0);
-    console.log("Total Value ES6: " + (commaThousands(totalValueES6)));
+    // console.log("Total Value ES6: " + (commaThousands(totalValueES6)));
     /**************************** LEAVE IN FOR STUDENTS **(********************************/
     /*********************** function to get commas in number *****************************/
     function commaThousands(number) {
@@ -174,8 +174,8 @@ $(document).ready(function() {
             return number;
         } else {
             for(var i = 0; i < (numArr.length - numArr.length % 3) / 3; i++) {
-                console.log('for iteration');
-                console.log(i * 3 + extra + startPos);
+                // console.log('for iteration');
+                // console.log(i * 3 + extra + startPos);
                 if(i*3+extra+startPos >= initialLength+extra) {
                     // console.log('stop');
                     break;
