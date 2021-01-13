@@ -46,7 +46,6 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYXJ0aHVyLWdhbWJvYSIsImEiOiJja2lqMHp1NTcwcjdnM
                     $("#divToAppend").append(HTML);
                 }
             }
-
         });
     }
 
@@ -83,11 +82,26 @@ function reverseGeocode(coordinates, token) {
             return data.features[2].place_name;
         });
 }
+//
+// mapboxgl.accessToken = 'pk.eyJ1IjoiYXJ0aHVyLWdhbWJvYSIsImEiOiJja2lqMHp1NTcwcjdnMnl1ZjRlcHVubWl3In0.ZIJJ7jKQF1YGg8L6FpOeDA';
+// var map = new mapboxgl.Map({
+//     container: 'map',
+//     style: 'mapbox://styles/mapbox/streets-v11',
+//     center: [-79.4512, 43.6568],
+//     zoom: 13
+// });
 
-let geocoder = new MapboxGeocoder ({
-    accessToken: mapboxgl.accessToken,
-    mapboxgl: mapboxgl,
-    minLength: 1,
-    marker: false
-});
-map.addControl(geocoder);
+// map.addControl(
+//     new MapboxGeocoder({
+//         accessToken: mapboxgl.accessToken,
+//         mapboxgl: mapboxgl
+//     })
+// );
+
+// let geocoder = new MapboxGeocoder ({
+//     accessToken: mapboxgl.accessToken,
+//     mapboxgl: mapboxgl,
+//     minLength: 1,
+//     marker: false
+// });
+// map.addControl(geocoder);
