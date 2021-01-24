@@ -2,21 +2,21 @@
 // good reference material: https://medium.com/@9cv9official/what-are-get-post-put-patch-delete-a-walkthrough-with-javascripts-fetch-api-17be31755d28
 //
 
-// const blogPost = {title: 'Ajax Requests', body: 'Are a fun way to use JS!'};
-// const url = '/posts';
-// const options = {
-//     method: 'POST',
-//     headers: {
-//         'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify(blogPost),
-// };
-// // fetch(url, options)
-// //     .then(/* post was created successfully */)
-// //     .catch(/* handle errors */);
-//
-// console.log(blogPost);
-// console.log(options);
+const blogPost = {title: 'Ajax Requests', body: 'Are a fun way to use JS!'};
+const url = '/posts';
+const options = {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(blogPost),
+};
+// fetch(url, options)
+//     .then(/* post was created successfully */)
+//     .catch(/* handle errors */);
+
+console.log(blogPost);
+console.log(options);
 
 
 // https://watery-hammerhead-bay.glitch.me/ :: our base URL for our API
